@@ -82,7 +82,16 @@ This is full config that I am using in one of my projects, feel free to take ins
         "react/no-multi-comp": "off"
       }
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "15.0",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": []
+  }
 }
 ```
 
