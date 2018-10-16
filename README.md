@@ -7,11 +7,6 @@ This is my preferred React code style linting rules. You'll probably hate them.
 No tricks, no magic, no useless code, no complicated code. Very opinionated about all these spaces, quotes, parentheses.
 A bit of sanity applied, but not too much.
 
-## ES-which?
-
-Rules are prepared for ES6+ code. Parser is set to `ecmaVersion` 9. Some rules may require ES6+ code so you'd better
-update your transpiler.
-
 ## Installation
 
 Installation steps assumes you've already configured base eslint config, ie: installed
