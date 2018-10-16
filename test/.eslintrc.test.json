@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "../.eslintrc.json"
+  ],
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass",
+      "pragma": "React",
+      "version": "15.0",
+      "flowVersion": "0.53"
+    },
+    "propWrapperFunctions": []
+  }
+}

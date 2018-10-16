@@ -1,0 +1,6 @@
+{
+  "extends": [
+    "./config/environment.js",
+    "./config/rules.js"
+  ]
+}
