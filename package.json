@@ -1,6 +1,6 @@
 {
   "name": "@dzek69/eslint-config-react",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "main": ".eslintrc.json",
   "repository": "https://github.com/dzek69/eslint-config-react.git",
   "author": "Jacek Nowacki @dzek69 <git-public@dzek.eu>",

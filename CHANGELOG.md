@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
-## [0.0.2] - 2018-10-16
+## [0.0.4] - 2018-10-23
+### Changed
+- disabled `react/jsx-one-expression-per-line` rule, too annoying
+
+## [0.0.3] - 2018-10-16
 ### Changed
 - added `settings` to README full config to make it copy-paste ready without warnings
 

@@ -137,9 +137,7 @@ module.exports = {
         "react/jsx-no-undef": [ERROR, {
             allowGlobals: false,
         }],
-        "react/jsx-one-expression-per-line": [ERROR, {
-            allow: "single-child",
-        }],
+        "react/jsx-one-expression-per-line": [OFF], // too annoying as it won't even allow `Count: {this.state.count}`
         "react/jsx-curly-brace-presence": [ERROR, {
             props: "always",
             children: "ignore",
