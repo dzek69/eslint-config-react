@@ -1,6 +1,6 @@
 {
   "name": "@dzek69/eslint-config-react",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "main": ".eslintrc.json",
   "repository": "https://github.com/dzek69/eslint-config-react.git",
   "author": "Jacek Nowacki @dzek69 <git-public@dzek.eu>",
@@ -13,7 +13,7 @@
   "peerDependencies": {
     "eslint": "^5.5.0",
     "eslint-plugin-react": "^7.11.1",
-    "react": "^15.0.0"
+    "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
     "docdash": "^1.0.0",

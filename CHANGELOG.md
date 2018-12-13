@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [0.0.5] - 2018-12-13
+### Changed
+- peerDependency of React changed to 15 || 16 || 17
+
 ## [0.0.4] - 2018-10-23
 ### Changed
 - disabled `react/jsx-one-expression-per-line` rule, too annoying
