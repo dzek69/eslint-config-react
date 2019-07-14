@@ -6,6 +6,22 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.0.0] - 2019-07-14
+### Added
+- `no-unsafe` enabled rule
+- `prefer-read-only-props` disabled rule
+- `state-in-constructor` disabled rule
+- `static-property-placement` enabled rule
+- `jsx-fragments` enabled rule
+- `jsx-curly-newline` enabled rule
+- `jsx-props-no-spreading` disabled rule
+### Changed
+- README encourages to use `detect` as value for React and flow version setting
+- `boolean-prop-naming` now disabled
+- `no-string-refs` rule now has `noTemplateLiterals` option enabled 
+- `jsx-indent` rule now has `checkAttributes` and `indentLogicalExpressions` options enabled 
+- `jsx-key` rule now has `checkFragmentShorthand` option enabled 
+
 ## [0.0.5] - 2018-12-13
 ### Changed
 - peerDependency of React changed to 15 || 16 || 17
