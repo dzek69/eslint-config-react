@@ -25,12 +25,8 @@ const codeStyle = {
     "react/no-danger": OFF,
     "react/no-danger-with-children": ERROR,
     "react/no-deprecated": WARN,
-    "react/no-did-mount-set-state": [ERROR, {
-        "disallow-in-func": true,
-    }],
-    "react/no-did-update-set-state": [ERROR, {
-        "disallow-in-func": true,
-    }],
+    "react/no-did-mount-set-state": [ERROR, "disallow-in-func"],
+    "react/no-did-update-set-state": [ERROR, "disallow-in-func"],
     "react/no-direct-mutation-state": ERROR,
     "react/no-find-dom-node": WARN,
     "react/no-is-mounted": ERROR,
@@ -182,5 +178,7 @@ const jsx = {
 
 module.exports = {
     rules: {
+        ...codeStyle,
+        ...jsx,
     },
 };

@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.0.2] - 2019-07-15
+### Fixed
+- no rule being defined in exported file
+
 ## [1.0.1] - 2019-07-14 - not released to npm
 ### Fixed
 - security issue with dev dependency by upgrading jsdoc
