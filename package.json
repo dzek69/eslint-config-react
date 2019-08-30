@@ -1,6 +1,6 @@
 {
   "name": "@dzek69/eslint-config-react",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": ".eslintrc.json",
   "repository": "https://github.com/dzek69/eslint-config-react.git",
   "author": "Jacek Nowacki @dzek69 <git-public@dzek.eu>",
@@ -11,17 +11,15 @@
     "prepack": "npm run test && npm run docs"
   },
   "peerDependencies": {
-    "eslint": "^6.0.1",
-    "eslint-plugin-react": "^7.14.2",
+    "eslint": "^6.2.2",
+    "eslint-plugin-react": "^7.14.3",
     "react": "^15.0.0 || ^16.0.0 || ^17.0.0"
   },
   "devDependencies": {
-    "docdash": "^1.0.0",
-    "eslint": "^6.0.1",
-    "eslint-plugin-react": "^7.14.2",
-    "fs-extra": "^7.0.0",
-    "jsdoc": "^3.6.2",
-    "mocha": "^4.0.1",
-    "must": "^0.13.4"
+    "docdash": "^1.1.1",
+    "eslint": "^6.2.2",
+    "eslint-plugin-react": "^7.14.3",
+    "fs-extra": "^7.0.1",
+    "jsdoc": "^3.6.3"
   }
 }

@@ -6,6 +6,12 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.1.0] - 2019-08-30
+### Fixed
+- audit warnings by upgrading deps
+### Changed
+- minimal deps versions
+
 ## [1.0.2] - 2019-07-15
 ### Fixed
 - no rule being defined in exported file
