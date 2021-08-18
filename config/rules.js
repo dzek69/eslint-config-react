@@ -66,16 +66,13 @@ const codeStyle = {
     "react/prefer-stateless-function": [ERROR, {
         "ignorePureComponents": true,
     }],
-    "react/prop-types": [ERROR, {
+    "react/prop-types": [ERROR, { // @TODO disable with TS
         // ignore: [],
         // customValidators: [],
         skipUndeclared: false,
     }],
     "react/react-in-jsx-scope": ERROR,
-    "react/require-default-props": [ERROR, {
-        forbidDefaultForRequired: true,
-        ignoreFunctionalComponents: false,
-    }],
+    "react/require-default-props": OFF,
     "react/require-optimization": OFF,
     "react/require-render-return": ERROR,
     "react/self-closing-comp": [ERROR, {
