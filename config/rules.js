@@ -18,8 +18,16 @@ const codeStyle = {
     "react/forbid-dom-props": OFF,
     "react/forbid-elements": OFF,
     "react/forbid-prop-types": OFF,
+    "react/function-component-definition": [
+        ERROR,
+        {
+            namedComponents: "arrow-function",
+            unnamedComponents: "arrow-function"
+        }
+    ],
     "react/forbid-foreign-prop-types": ERROR,
     "react/no-access-state-in-setstate": ERROR,
+    "react/no-adjacent-inline-elements": OFF,
     "react/no-array-index-key": WARN,
     "react/no-children-prop": WARN,
     "react/no-danger": OFF,
@@ -46,6 +54,9 @@ const codeStyle = {
     "react/no-unsafe": [ERROR, {
         "checkAliases": true,
     }],
+    "react/no-unstable-nested-components": [ERROR, {
+        allowAsProps: false, // @todo does it allow default renderX prop now?
+    }],
     "react/no-unused-prop-types": [WARN, {
         // customValidator: [],
         skipShapeProps: true,
@@ -65,6 +76,7 @@ const codeStyle = {
     "react/react-in-jsx-scope": ERROR,
     "react/require-default-props": [ERROR, {
         forbidDefaultForRequired: true,
+        ignoreFunctionalComponents: false,
     }],
     "react/require-optimization": OFF,
     "react/require-render-return": ERROR,
@@ -108,14 +120,20 @@ const jsx = {
     "react/jsx-handler-names": [ERROR, {
         eventHandlerPrefix: "(handle|_handle)",
         eventHandlerPropPrefix: "on",
+        checkLocalVariables: true,
+        checkInlineFunction: false,
     }],
     "react/jsx-indent": [ERROR, 4, {
         checkAttributes: true,
         indentLogicalExpressions: true,
     }],
-    "react/jsx-indent-props": [ERROR, 4],
+    "react/jsx-indent-props": [ERROR, {
+        indentMode: 4,
+        ignoreTernaryOperator: false,
+    }],
     "react/jsx-key": [ERROR, {
         checkFragmentShorthand: true,
+        checkKeyMustBeforeSpread: true,
     }],
     "react/jsx-max-depth": [WARN, {
         max: 10, //
@@ -124,6 +142,7 @@ const jsx = {
         when: "multiline",
         maximum: 1,
     }],
+    "react/jsx-newline": OFF,
     "react/jsx-no-bind": [ERROR, {
         ignoreDOMComponents: false,
         ignoreRefs: false,
@@ -132,17 +151,24 @@ const jsx = {
         allowBind: false,
     }],
     "react/jsx-no-comment-textnodes": OFF,
+    "react/jsx-no-constructed-context-values": ERROR,
     "react/jsx-no-duplicate-props": [ERROR, {
         ignoreCase: false,
     }],
     "react/jsx-no-literals": OFF,
+    "react/jsx-no-script-url": ERROR, // default config left out here - too noisy, default it good
     "react/jsx-props-no-spreading": OFF,
     "react/jsx-no-target-blank": [ERROR, {
+        allowReferrer: false,
         enforceDynamicLinks: "always",
+        warnOnSpreadAttributes: false,
+        // links: true, // @TODO enable when released
+        // forms: true,
     }],
     "react/jsx-no-undef": [ERROR, {
         allowGlobals: false,
     }],
+    "react/jsx-no-useless-fragment": [OFF, /*{ allowExpressions: true }*/], // FIXME enable when allowExpressions is released
     "react/jsx-one-expression-per-line": [OFF], // too annoying as it won't even allow `Count: {this.state.count}`
     "react/jsx-curly-brace-presence": [ERROR, {
         props: "always",
@@ -150,9 +176,11 @@ const jsx = {
     }],
     "react/jsx-pascal-case": [ERROR, {
         allowAllCaps: true,
+        // allowLeadingUnderscore: false, // @TODO enable when released
+        allowNamespace: false,
         // ignore: [],
     }],
-    "react/jsx-props-no-multi-spaces": ERROR,
+    "react/jsx-props-no-multi-spaces": OFF,
     "react/jsx-sort-default-props": [ERROR, {
         ignoreCase: true,
     }],

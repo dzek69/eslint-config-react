@@ -6,6 +6,27 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.2.0] - 2021-08-18
+### Added
+- `function-component-definition` rule
+- `no-unstable-nested-components` rule
+- `jsx-no-constructed-context-values` rule
+- `jsx-no-script-url` rule
+- `no-adjacent-inline-elements` disabled rule
+- `jsx-newline` disabled rule
+- `jsx-no-useless-fragment` disabled rule (to be enabled in the future)
+### Changed
+- `require-default-props` explicitly set default `ignoreFunctionalComponents` option
+- `jsx-handler-names` will check local variables (same as default) but won't check inline functions (new option)
+- `jsx-indent-props` more explicit config
+- `jsx-key` new option to prevent some issues
+- `jsx-no-target-blank` reconfigured with new options
+- `jsx-pascal-case` reconfigured with new options
+- `jsx-props-no-multi-spaces` disabled (not needed)
+- general library update which should bring (better?) TypeScript integration
+### Dev
+- removed jsdoc, updated some deps
+
 ## [1.1.0] - 2019-08-30
 ### Fixed
 - audit warnings by upgrading deps
