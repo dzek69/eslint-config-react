@@ -47,9 +47,7 @@ const codeStyle = {
         noTemplateLiterals: true,
     }],
     "react/no-this-in-sfc": ERROR,
-    "react/no-unescaped-entities": [ERROR, {
-        // forbid: ['>', '"', '\'', '}']
-    }],
+    "react/no-unescaped-entities": OFF,
     "react/no-unknown-property": WARN, // @todo verify this, set to error if ok
     "react/no-unsafe": [ERROR, {
         "checkAliases": true,
