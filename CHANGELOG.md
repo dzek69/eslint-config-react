@@ -6,6 +6,36 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ## [UNRELEASED]
 (nothing yet)
 
+## [1.3.0] - 2023-07-08
+### Changed
+- `no-children-prop` will now accept functions as children prop (only?)
+- `no-find-dom-node` is now at error level instead of warn`
+- `no-multi-comp` options updated
+- `react/no-unknown-property` is not at error level, explicitly set options
+- `no-unstable-nested-components`, `no-unused-prop-types`, `prop-types`, `jsx-curly-spacing`, `jsx-fragments` explicitly set options (changing nothing in behavior)
+- `prefer-stateless-function` changed to disallow pure components
+- `jsx-key` will warn on duplicates now
+- `jsx-no-target-blank` upgraded with new options
+- `jsx-pascal-case` upgraded with new options
+### Added
+- enabled `display-name` rule
+- `forbid-foreign-prop-types` rule
+- `iframe-missing-sandbox` rule
+- `no-arrow-function-lifecycle` rule
+- `no-invalid-html-attribute` rule
+- `no-namespace` rule
+- `no-object-type-as-default-prop` rule
+- `no-unused-class-component-methods` rule
+- `jsx-equals-spacing` rule
+- `jsx-no-leaked-render` rule
+### Removed
+- `jsx-handler-names` rule disabled
+- `jsx-no-undef` rule disabled
+### Dev
+- added `hook-use-state`, `prefer-exact-props` disabled rules
+- replaced deprecated `jsx-sort-default-props` with `sort-default-props`
+- added `jsx-space-before-closing` disabled rule, it's deprecated
+
 ## [1.2.2] - 2021-08-18
 ### Changed
 - `require-default-props` rule disabled

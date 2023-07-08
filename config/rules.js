@@ -13,10 +13,14 @@ const codeStyle = {
         allowRequiredDefaults: false,
     }],
     "react/destructuring-assignment": OFF,
-    "react/display-name": OFF,
+    "react/display-name": [ERROR, {
+        ignoreTranspilerName: false,
+        // checkContextObjects: true, // not released yet
+    }],
     "react/forbid-component-props": OFF,
     "react/forbid-dom-props": OFF,
     "react/forbid-elements": OFF,
+    "react/forbid-foreign-prop-types": [ERROR, { allowInPropTypes: false }],
     "react/forbid-prop-types": OFF,
     "react/function-component-definition": [
         ERROR,
@@ -25,53 +29,64 @@ const codeStyle = {
             unnamedComponents: "arrow-function"
         }
     ],
-    "react/forbid-foreign-prop-types": ERROR,
+    "react/hook-use-state": OFF,
+    "react/iframe-missing-sandbox": ERROR,
     "react/no-access-state-in-setstate": ERROR,
     "react/no-adjacent-inline-elements": OFF,
     "react/no-array-index-key": WARN,
-    "react/no-children-prop": WARN,
-    "react/no-danger": OFF,
+    "react/no-arrow-function-lifecycle": ERROR,
+    "react/no-children-prop": [
+        WARN, { allowFunctions: true },
+    ],
     "react/no-danger-with-children": ERROR,
+    "react/no-danger": OFF,
     "react/no-deprecated": WARN,
     "react/no-did-mount-set-state": [ERROR, "disallow-in-func"],
     "react/no-did-update-set-state": [ERROR, "disallow-in-func"],
     "react/no-direct-mutation-state": ERROR,
-    "react/no-find-dom-node": WARN,
+    "react/no-find-dom-node": ERROR,
+    "react/no-invalid-html-attribute": [ERROR, ["rel"]],
     "react/no-is-mounted": ERROR,
-    "react/no-multi-comp": WARN,
+    "react/no-multi-comp": [WARN, { ignoreStateless: false }],
+    "react/no-namespace": ERROR,
+    "react/no-object-type-as-default-prop": ERROR,
     "react/no-redundant-should-component-update": ERROR,
     "react/no-render-return-value": ERROR,
     "react/no-set-state": OFF,
-    "react/no-typos": ERROR,
     "react/no-string-refs": [ERROR, {
         noTemplateLiterals: true,
     }],
-    "react/no-this-in-sfc": ERROR,
+    "react/no-this-in-sfc": ERROR, // @TODO disable on typescript in flat config
+    "react/no-typos": ERROR,
     "react/no-unescaped-entities": OFF,
-    "react/no-unknown-property": WARN, // @todo verify this, set to error if ok
+    "react/no-unknown-property": [ERROR, { ignore: [] }],
     "react/no-unsafe": [ERROR, {
         "checkAliases": true,
     }],
     "react/no-unstable-nested-components": [ERROR, {
-        allowAsProps: false, // @todo does it allow default renderX prop now?
+        allowAsProps: false,
+        customValidators: [],
     }],
+    "react/no-unused-class-component-methods": [ERROR],
     "react/no-unused-prop-types": [WARN, {
-        // customValidator: [],
+        ignore: [],
+        customValidators: [],
         skipShapeProps: true,
     }],
     "react/no-unused-state": ERROR,
     "react/no-will-update-set-state": ERROR,
     "react/prefer-es6-class": [ERROR, "always"],
-    "react/prefer-read-only-props": OFF,
+    "react/prefer-exact-props": OFF,
+    "react/prefer-read-only-props": OFF, // flow only
     "react/prefer-stateless-function": [ERROR, {
-        "ignorePureComponents": true,
+        "ignorePureComponents": false,
     }],
-    "react/prop-types": [ERROR, { // @TODO disable with TS
-        // ignore: [],
-        // customValidators: [],
+    "react/prop-types": [ERROR, { // @TODO disable with TS with flat config
+        ignore: [],
+        customValidators: [],
         skipUndeclared: false,
     }],
-    "react/react-in-jsx-scope": ERROR,
+    "react/react-in-jsx-scope": ERROR, // TODO allow to disable with flat config
     "react/require-default-props": OFF,
     "react/require-optimization": OFF,
     "react/require-render-return": ERROR,
@@ -82,6 +97,9 @@ const codeStyle = {
     "react/sort-comp": [ERROR, {
         // order: [],
         // groups: {}
+    }],
+    "react/sort-default-props": [ERROR, {
+        ignoreCase: true,
     }],
     "react/sort-prop-types": [ERROR, {
         ignoreCase: true,
@@ -103,21 +121,23 @@ const jsx = {
         location: "tag-aligned",
     }],
     "react/jsx-closing-tag-location": ERROR,
+    "react/jsx-curly-brace-presence": [ERROR, {
+        props: "always",
+        children: "ignore",
+    }],
     "react/jsx-curly-newline": [ERROR, "never"],
     "react/jsx-curly-spacing": [ERROR, {
         when: "never",
-        allowMultiline: true, // @todo verify and consider false here
-        // spacing: {}
+        allowMultiline: true,
+        "spacing": {
+            "objectLiterals": "never"
+        },
     }],
+    "react/jsx-equals-spacing": [ERROR, "never"],
     "react/jsx-filename-extension": OFF,
     "react/jsx-first-prop-new-line": [ERROR, "multiline"],
-    "react/jsx-fragments": ERROR,
-    "react/jsx-handler-names": [ERROR, {
-        eventHandlerPrefix: "(handle|_handle)",
-        eventHandlerPropPrefix: "on",
-        checkLocalVariables: true,
-        checkInlineFunction: false,
-    }],
+    "react/jsx-fragments": [ERROR, "syntax"],
+    "react/jsx-handler-names": [OFF],
     "react/jsx-indent": [ERROR, 4, {
         checkAttributes: true,
         indentLogicalExpressions: true,
@@ -129,6 +149,7 @@ const jsx = {
     "react/jsx-key": [ERROR, {
         checkFragmentShorthand: true,
         checkKeyMustBeforeSpread: true,
+        warnOnDuplicates: true,
     }],
     "react/jsx-max-depth": [WARN, {
         max: 10, //
@@ -150,43 +171,39 @@ const jsx = {
     "react/jsx-no-duplicate-props": [ERROR, {
         ignoreCase: false,
     }],
+    "react/jsx-no-leaked-render": [ERROR, {
+        validStrategies: ["coerce", "ternary"]
+    }],
     "react/jsx-no-literals": OFF,
     "react/jsx-no-script-url": ERROR, // default config left out here - too noisy, default it good
-    "react/jsx-props-no-spreading": OFF,
     "react/jsx-no-target-blank": [ERROR, {
         allowReferrer: false,
         enforceDynamicLinks: "always",
         warnOnSpreadAttributes: false,
-        // links: true, // @TODO enable when released
-        // forms: true,
+        links: true,
+        forms: true,
     }],
-    "react/jsx-no-undef": [ERROR, {
-        allowGlobals: false,
-    }],
-    "react/jsx-no-useless-fragment": [OFF, /*{ allowExpressions: true }*/], // FIXME enable when allowExpressions is released
+    "react/jsx-no-undef": OFF, // [ERROR, { allowGlobals: false }], TODO - that when no typescript - when flat config is ready
+    "react/jsx-no-useless-fragment": OFF,
     "react/jsx-one-expression-per-line": [OFF], // too annoying as it won't even allow `Count: {this.state.count}`
-    "react/jsx-curly-brace-presence": [ERROR, {
-        props: "always",
-        children: "ignore",
-    }],
     "react/jsx-pascal-case": [ERROR, {
         allowAllCaps: true,
-        // allowLeadingUnderscore: false, // @TODO enable when released
+        allowLeadingUnderscore: false,
         allowNamespace: false,
-        // ignore: [],
+        ignore: [],
     }],
-    "react/jsx-props-no-multi-spaces": OFF,
-    "react/jsx-sort-default-props": [ERROR, {
-        ignoreCase: true,
-    }],
+    "react/jsx-props-no-multi-spaces": OFF, // If you have enabled the core rule no-multi-spaces with eslint >= 3, you don't need this rule.
+    "react/jsx-props-no-spreading": OFF,
+    "react/jsx-sort-default-props": OFF, // deprecated, use react/sort-default-props
     "react/jsx-sort-props": OFF,
+    "react/jsx-space-before-closing": OFF, // deprecated, use react/jsx-tag-spacing
     "react/jsx-tag-spacing": [ERROR, {
         closingSlash: "never",
         beforeSelfClosing: "always",
         afterOpening: "never",
         beforeClosing: "never",
     }],
-    "react/jsx-uses-react": ERROR,
+    "react/jsx-uses-react": ERROR, // TODO disable when new jsx transform via flat config
     "react/jsx-uses-vars": ERROR,
     "react/jsx-wrap-multilines": [ERROR, {
         declaration: "parens-new-line",
